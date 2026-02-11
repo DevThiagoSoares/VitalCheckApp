@@ -59,16 +59,23 @@ npm install
 npx expo start
 ```
 
+Escaneie o QR code com **Expo Go** (celular) ou pressione `a` para abrir no emulador Android.
+
 📖 Documentação completa: [`react-native/README.md`](react-native/README.md)
 
 ### Kotlin / Android
 
+**Via Android Studio (recomendado):**
+1. `File → Open` → selecionar a pasta `kotlin/`
+2. Aguardar Gradle Sync
+3. `Tools → Device Manager` → criar ou iniciar emulador
+4. **▶ Run 'app'**
+
+**Via terminal:**
 ```bash
 cd kotlin
-# Abrir no Android Studio:
-# File → Open → selecionar a pasta kotlin/
-# Ou via terminal:
-./gradlew assembleDebug
+./gradlew assembleDebug      # compilar
+./gradlew installDebug       # instalar no emulador/dispositivo
 ```
 
 📖 Documentação completa: [`kotlin/README.md`](kotlin/README.md)

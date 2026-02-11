@@ -1,6 +1,6 @@
-# VitalCheck App
+# VitalCheck — React Native (Expo + TypeScript)
 
-Aplicação mobile de diário inteligente de saúde, permitindo monitorar indicadores vitais e registrar sintomas com persistência local.
+Implementação cross-platform do VitalCheck usando React Native, Expo e TypeScript com Clean Architecture.
 
 ---
 
@@ -14,8 +14,8 @@ Aplicação mobile de diário inteligente de saúde, permitindo monitorar indica
 - **Expo SDK 54**: Framework maduro que simplifica build, deploy e acesso a APIs nativas sem necessidade de configuração nativa manual
 - **Ecossistema React**: Vasta comunidade, bibliotecas bem mantidas e padrões consolidados
 
-**Alternativas rejeitadas:**
-- **Kotlin/Android nativo**: Ofereceria melhor performance nativa, porém limitaria a app a uma única plataforma. Para um produto real com ambição de alcance, cross-platform é mais estratégico
+**Alternativas consideradas:**
+- **Kotlin/Android nativo**: Implementado em paralelo na pasta `kotlin/` — oferece melhor performance nativa, porém limitado a Android. React Native complementa cobrindo iOS com a mesma codebase
 - **Flutter**: Alternativa válida, porém o ecossistema React Native é mais maduro para integrações com serviços de saúde existentes (Google Fit, Apple HealthKit)
 
 ### Arquitetura: Clean Architecture + MVVM (via Hooks + Reducers)
@@ -134,9 +134,8 @@ Utilizo um **Service Container** (Composition Root) combinado com **React Contex
 ### Instalação
 
 ```bash
-# Clonar o repositório
-git clone https://github.com/DevThiagoSoares/VitalCheckApp.git
-cd VitalCheckApp
+# A partir da raiz do repositório
+cd react-native
 
 # Instalar dependências
 npm install
@@ -148,10 +147,10 @@ npm install
 # Iniciar o servidor de desenvolvimento
 npx expo start
 
-# Ou diretamente para Android
+# Ou diretamente para Android (emulador ou dispositivo conectado)
 npx expo start --android
 
-# Ou para iOS (requer macOS)
+# Ou para iOS (requer macOS + Xcode)
 npx expo start --ios
 
 # Ou para Web (desenvolvimento/debug)
@@ -286,6 +285,8 @@ src/
 ---
 
 ## 🧠 Uso de IA e Ética
+
+Detalhes completos no [README do root](../README.md).
 
 ### Como a IA foi utilizada
 

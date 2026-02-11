@@ -15,8 +15,9 @@ Implementação nativa Android do VitalCheck usando Kotlin, Jetpack Compose e Cl
 - **Material 3**: Design system nativo do Google com suporte a dynamic color
 
 **Comparação com a versão React Native:**
-- React Native oferece cross-platform; Kotlin oferece performance e integração nativa superior
+- React Native oferece cross-platform (Android + iOS); Kotlin oferece performance e integração nativa superior no Android
 - Ambas usam a mesma arquitetura (Clean Architecture + MVVM) — demonstrando que bons princípios transcendem frameworks
+- A implementação React Native está em [`../react-native/`](../react-native/README.md)
 
 ### Arquitetura: Clean Architecture + MVVM
 
@@ -116,18 +117,48 @@ Equivalente ao `ServiceContainer.ts` + `ServiceContext.tsx` da versão React Nat
 - **Android SDK 34** (API 34)
 - **Emulador** ou dispositivo Android com API 26+ (Android 8.0+)
 
-### Build e Execução
+### Build e Execução via Android Studio (recomendado)
+
+1. Abrir o Android Studio
+2. `File → Open` → selecionar a pasta `kotlin/`
+3. Aguardar o **Gradle Sync** completar (primeira vez pode levar alguns minutos)
+4. Selecionar um dispositivo no dropdown de targets (ver seção Emulador abaixo)
+5. Clicar em **▶ Run 'app'**
+
+### Configurar Emulador Android
+
+Se você não tiver um emulador configurado:
+
+1. No Android Studio: `Tools → Device Manager` (ou ícone de celular na lateral direita)
+2. Clicar em **Create Virtual Device**
+3. Selecionar um dispositivo (ex: **Medium Phone**)
+4. Selecionar a imagem do sistema (ex: **API 34** ou superior) → **Download** se necessário
+5. Finalizar e clicar no **▶** ao lado do emulador para iniciá-lo
+6. Com o emulador rodando, clicar em **▶ Run 'app'** no Android Studio
+
+**Via terminal** (requer emulador já criado):
 
 ```bash
-# Via Android Studio (recomendado):
-# File → Open → selecionar pasta kotlin/
-# Run → Run 'app'
+# Listar emuladores disponíveis
+emulator -list-avds
 
-# Via terminal:
+# Iniciar emulador
+emulator -avd <NOME_DO_AVD> &
+
+# Compilar e instalar
 cd kotlin
+./gradlew installDebug
+```
+
+### Build via Terminal
+
+```bash
+cd kotlin
+
+# Compilar APK de debug
 ./gradlew assembleDebug
 
-# Instalar no dispositivo conectado:
+# Instalar no dispositivo/emulador conectado
 ./gradlew installDebug
 ```
 
