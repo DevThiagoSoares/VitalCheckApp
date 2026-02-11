@@ -1,4 +1,5 @@
 # ===== React Native =====
+.expo/
 react-native/node_modules/
 react-native/.expo/
 react-native/dist/
